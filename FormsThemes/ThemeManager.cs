@@ -14,5 +14,11 @@ public class ThemeManager
         {
             VisualStyle = visualStyle
         };
+
+        foreach (Form form in Application.OpenForms)
+        {
+            form.BackColor = visualStyle.FormColor;
+            form.Refresh();
+        }
     }
 }

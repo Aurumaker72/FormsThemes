@@ -9,7 +9,7 @@ public class ThemedTextBox : TextBox
 {
     public ThemedTextBox()
     {
-        SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+        SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
     }
     
     private VisualState _visualState = VisualState.Normal;
@@ -18,29 +18,29 @@ public class ThemedTextBox : TextBox
     protected override void OnCreateControl()
     {
         base.OnCreateControl();
-        BackColor = Color.Transparent;
         DoubleBuffered = true;
         MouseEnter += ThemedButton_MouseEnter;
         MouseLeave += ThemedButton_MouseLeave;
-        UpdateForeColor();
+        UpdateColor();
     }
 
-    private void UpdateForeColor()
+    private void UpdateColor()
     {
         ForeColor = ThemeManager.Instance!.VisualStyle.TextBoxForegroundColor.Get(EffectiveVisualState);
+        BackColor = Color.Transparent;
         Invalidate();
     }
 
     private void ThemedButton_MouseLeave(object? sender, EventArgs e)
     {
         _visualState = VisualState.Normal;
-        UpdateForeColor();
+        UpdateColor();
     }
 
     private void ThemedButton_MouseEnter(object? sender, EventArgs e)
     {
         _visualState = VisualState.Hovered;
-        UpdateForeColor();
+        UpdateColor();
     }
 
     [DllImport("user32")]
@@ -50,10 +50,7 @@ public class ThemedTextBox : TextBox
     {
         if (m.Msg == 0x85) //WM_NCPAINT    
         {
-            
             using var graphics = Graphics.FromHdc(GetWindowDC(Handle));
-
-
             
             var bounds = Bounds with { X = 0, Y = 0 };
 

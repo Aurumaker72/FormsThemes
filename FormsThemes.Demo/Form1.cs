@@ -21,22 +21,24 @@ public partial class Form1 : ThemedForm
         }
     }
 
-    
+
     private void themedButton1_Click(object sender, EventArgs e)
     {
         ThemeManager.Apply(Resources.Windows7);
-        Refresh();
     }
 
     private void themedButton2_Click(object sender, EventArgs e)
     {
         ThemeManager.Apply(Resources.Windows10);
-        Refresh();
     }
 
     private void themedButton3_Click(object sender, EventArgs e)
     {
         ThemeManager.Apply(Resources.Windows11);
-        Refresh();
+    }
+
+    private void themedButton4_Click(object sender, EventArgs e)
+    {
+        ThemeManager.Apply(Resources.Windows10Dark);
     }
 }

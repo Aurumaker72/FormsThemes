@@ -6,7 +6,7 @@ public static partial class Resources
     {
         get
         {
-            var visualStyle = Resources.Windows10;
+            var visualStyle = Windows10;
             visualStyle.Image.Dispose();
             visualStyle.Image = Image.FromFile("Assets/windows-11-atlas.png");
             return visualStyle;

@@ -9,7 +9,6 @@ public class ThemedButton : Button
 
     private VisualState EffectiveVisualState => this.GetOverridenVisualState(_visualState);
 
-
     protected override void OnCreateControl()
     {
         base.OnCreateControl();

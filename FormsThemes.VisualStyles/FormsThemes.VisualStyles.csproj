@@ -8,6 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Update="Assets\windows-10-dark-atlas.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
       <None Update="Assets\windows-11-atlas.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
