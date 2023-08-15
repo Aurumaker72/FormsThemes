@@ -45,4 +45,9 @@ public record struct VisualStyle
     public required VisualStateful<Ninepatch> ComboBox { get; set; }
     public required VisualStateful<Rectangle> ComboBoxArrow { get; set; }
     public required VisualStateful<Color> ComboBoxForegroundColor { get; set; }
+    public required VisualStateful<Ninepatch> ListBox { get; set; }
+    public required VisualStateful<Ninepatch> ListBoxItem { get; set; }
+    public required VisualStateful<Color> ListBoxForegroundColor { get; set; }
+
+
 }

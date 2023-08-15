@@ -33,14 +33,12 @@ public class ThemedTextBox : TextBox
 
     private void ThemedButton_MouseLeave(object? sender, EventArgs e)
     {
-        Debug.Print("Mouse leave");
         _visualState = VisualState.Normal;
         UpdateForeColor();
     }
 
     private void ThemedButton_MouseEnter(object? sender, EventArgs e)
     {
-        Debug.Print("Mouse enter");
         _visualState = VisualState.Hovered;
         UpdateForeColor();
     }

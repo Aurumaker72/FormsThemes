@@ -35,7 +35,7 @@ namespace FormsThemes.Demo
             checkBox1=new ThemedCheckBox();
             radioButton1=new ThemedRadioButton();
             radioButton2=new ThemedRadioButton();
-            listBox1=new ListBox();
+            listBox1=new ThemedListBox();
             checkBox2=new ThemedCheckBox();
             comboBox2=new ThemedComboBox();
             textBox1=new ThemedTextBox();
@@ -100,7 +100,7 @@ namespace FormsThemes.Demo
             // 
             listBox1.FormattingEnabled=true;
             listBox1.ItemHeight=15;
-            listBox1.Items.AddRange(new object[] { "a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d", });
+            listBox1.Items.AddRange(Enumerable.Range(0, 100).Select(x => $"Item {x}").ToArray());
             listBox1.Location=new Point(366, 25);
             listBox1.Name="listBox1";
             listBox1.Size=new Size(198, 199);
@@ -176,12 +176,12 @@ namespace FormsThemes.Demo
 
         #endregion
 
-        private Controls.ThemedButton themedButton1;
+        private ThemedButton themedButton1;
         private GroupBox groupBox1;
         private ThemedCheckBox checkBox1;
         private ThemedRadioButton radioButton1;
         private ThemedRadioButton radioButton2;
-        private ListBox listBox1;
+        private ThemedListBox listBox1;
         private ThemedCheckBox checkBox2;
         private ThemedComboBox comboBox2;
         private ThemedTextBox textBox1;

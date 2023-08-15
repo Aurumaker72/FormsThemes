@@ -179,6 +179,70 @@ internal static class Program
             Focused = Color.Black,
             Disabled = Color.FromArgb(109, 109, 109)
         },
+        ListBox = new()
+        {
+            Normal = new Ninepatch
+            {
+                Source = new Rectangle(80, 1, 3, 3),
+                Center = new Rectangle(81, 2, 1, 1)
+            },
+            Hovered = new Ninepatch
+            {
+                Source = new Rectangle(80, 1, 3, 3),
+                Center = new Rectangle(81, 2, 1, 1)
+            },
+            Active = new Ninepatch
+            {
+                Source = new Rectangle(80, 1, 3, 3),
+                Center = new Rectangle(81, 2, 1, 1)
+            },
+            Focused = new Ninepatch
+            {
+                Source = new Rectangle(80, 1, 3, 3),
+                Center = new Rectangle(81, 2, 1, 1)
+            },
+            Disabled = new Ninepatch
+            {
+                Source = new Rectangle(80, 10, 3, 3),
+                Center = new Rectangle(81, 11, 1, 1)
+            }
+        },
+        ListBoxItem = new()
+        {
+            Normal = new Ninepatch
+            {
+                Source = new Rectangle(83, 5, 3, 4),
+                Center = new Rectangle(84, 6, 1, 2)
+            },
+            Hovered = new Ninepatch
+            {
+                Source = new Rectangle(83, 5, 3, 4),
+                Center = new Rectangle(84, 6, 1, 2)
+            },
+            Active = new Ninepatch
+            {
+                Source = new Rectangle(83, 1, 3, 4),
+                Center = new Rectangle(84, 2, 1, 2)
+            },
+            Focused = new Ninepatch
+            {
+                Source = new Rectangle(83, 5, 3, 4),
+                Center = new Rectangle(84, 6, 1, 2)
+            },
+            Disabled = new Ninepatch
+            {
+                Source = new Rectangle(83, 5, 3, 4),
+                Center = new Rectangle(84, 6, 1, 2)
+            }
+        },
+        ListBoxForegroundColor = new VisualStateful<Color>
+        {
+            Normal = Color.Black,
+            Hovered = Color.Black,
+            Active = Color.White,
+            Focused = Color.Black,
+            Disabled = Color.FromArgb(109, 109, 109)
+        },
     };
 
     public static VisualStyle Windows7VisualStyle => new VisualStyle
@@ -355,6 +419,70 @@ internal static class Program
             Normal = Color.Black,
             Hovered = Color.Black,
             Active = Color.Black,
+            Focused = Color.Black,
+            Disabled = Color.FromArgb(109, 109, 109)
+        },
+        ListBox = new()
+        {
+            Normal = new Ninepatch
+            {
+                Source = new Rectangle(34, 22, 3, 3),
+                Center = new Rectangle(35, 23, 1, 1)
+            },
+            Hovered = new Ninepatch
+            {
+                Source = new Rectangle(34, 22, 3, 3),
+                Center = new Rectangle(35, 23, 1, 1)
+            },
+            Active = new Ninepatch
+            {
+                Source = new Rectangle(34, 22, 3, 3),
+                Center = new Rectangle(35, 23, 1, 1)
+            },
+            Focused = new Ninepatch
+            {
+                Source = new Rectangle(34, 22, 3, 3),
+                Center = new Rectangle(35, 23, 1, 1)
+            },
+            Disabled = new Ninepatch
+            {
+                Source = new Rectangle(34, 31, 3, 3),
+                Center = new Rectangle(35, 32, 1, 1)
+            }
+        },
+        ListBoxItem = new()
+        {
+            Normal = new Ninepatch
+            {
+                Source = new Rectangle(34, 40, 3, 4),
+                Center = new Rectangle(35, 41, 1, 2)
+            },
+            Hovered = new Ninepatch
+            {
+                Source = new Rectangle(34, 40, 3, 4),
+                Center = new Rectangle(35, 41, 1, 2)
+            },
+            Active = new Ninepatch
+            {
+                Source = new Rectangle(34, 35, 3, 4),
+                Center = new Rectangle(35, 36, 1, 2)
+            },
+            Focused = new Ninepatch
+            {
+                Source = new Rectangle(34, 40, 3, 4),
+                Center = new Rectangle(35, 41, 1, 2)
+            },
+            Disabled = new Ninepatch
+            {
+                Source = new Rectangle(34, 40, 3, 4),
+                Center = new Rectangle(35, 41, 1, 2)
+            }
+        },
+        ListBoxForegroundColor = new VisualStateful<Color>
+        {
+            Normal = Color.Black,
+            Hovered = Color.Black,
+            Active = Color.White,
             Focused = Color.Black,
             Disabled = Color.FromArgb(109, 109, 109)
         },
