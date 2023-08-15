@@ -17,6 +17,7 @@ public class ThemedRadioButton : RadioButton
         MouseLeave += ThemedRadioButton_MouseLeave;
         MouseDown += ThemedRadioButton_MouseDown;
         MouseUp += ThemedRadioButton_MouseUp;
+        Invalidate();
     }
 
     private void ThemedRadioButton_MouseUp(object? sender, MouseEventArgs e)

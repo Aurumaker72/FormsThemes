@@ -28,21 +28,21 @@ public readonly record struct VisualStateful<T>(T Normal, T Hovered, T Active, T
 
 public record struct VisualStyle
 {
-    public Image Image { get; set; }
-    public Font Font { get; set; }
-    public Color FormColor { get; set; }
-    public VisualStateful<Ninepatch> Button { get; set; }
-    public VisualStateful<Color> ButtonForegroundColor { get; set; }
-    public VisualStateful<Ninepatch> TextBox { get; set; }
-    public VisualStateful<Color> TextBoxForegroundColor { get; set; }
-    public VisualStateful<Rectangle> CheckBoxUnchecked { get; set; }
-    public VisualStateful<Rectangle> CheckBoxChecked { get; set; }
-    public VisualStateful<Rectangle> CheckBoxIndeterminate { get; set; }
-    public VisualStateful<Color> CheckBoxForegroundColor { get; set; }
-    public VisualStateful<Rectangle> RadioButtonUnchecked { get; set; }
-    public VisualStateful<Rectangle> RadioButtonChecked { get; set; }
-    public VisualStateful<Color> RadioButtonForegroundColor { get; set; }
-    public VisualStateful<Ninepatch> ComboBox { get; set; }
-    public VisualStateful<Rectangle> ComboBoxArrow { get; set; }
-    public VisualStateful<Color> ComboBoxForegroundColor { get; set; }
+    public required Image Image { get; set; }
+    public required Font Font { get; set; }
+    public required Color FormColor { get; set; }
+    public required VisualStateful<Ninepatch> Button { get; set; }
+    public required VisualStateful<Color> ButtonForegroundColor { get; set; }
+    public required VisualStateful<Ninepatch> TextBox { get; set; }
+    public required VisualStateful<Color> TextBoxForegroundColor { get; set; }
+    public required VisualStateful<Rectangle> CheckBoxUnchecked { get; set; }
+    public required VisualStateful<Rectangle> CheckBoxChecked { get; set; }
+    public required VisualStateful<Rectangle> CheckBoxIndeterminate { get; set; }
+    public required VisualStateful<Color> CheckBoxForegroundColor { get; set; }
+    public required VisualStateful<Rectangle> RadioButtonUnchecked { get; set; }
+    public required VisualStateful<Rectangle> RadioButtonChecked { get; set; }
+    public required VisualStateful<Color> RadioButtonForegroundColor { get; set; }
+    public required VisualStateful<Ninepatch> ComboBox { get; set; }
+    public required VisualStateful<Rectangle> ComboBoxArrow { get; set; }
+    public required VisualStateful<Color> ComboBoxForegroundColor { get; set; }
 }

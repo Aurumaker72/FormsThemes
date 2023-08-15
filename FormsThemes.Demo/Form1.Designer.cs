@@ -35,7 +35,6 @@ namespace FormsThemes.Demo
             checkBox1=new ThemedCheckBox();
             radioButton1=new ThemedRadioButton();
             radioButton2=new ThemedRadioButton();
-            comboBox1=new ThemedComboBox();
             listBox1=new ListBox();
             checkBox2=new ThemedCheckBox();
             comboBox2=new ThemedComboBox();
@@ -97,22 +96,11 @@ namespace FormsThemes.Demo
             radioButton2.Text="radioButton2";
             radioButton2.UseVisualStyleBackColor=true;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled=true;
-            comboBox1.Location=new Point(588, 204);
-            comboBox1.Name="comboBox1";
-            comboBox1.Size=new Size(121, 23);
-            comboBox1.TabIndex=6;
-            comboBox1.Items.Add("item A");
-            comboBox1.Items.Add("item B");
-            comboBox1.Items.Add("item C");
-            // 
             // listBox1
             // 
             listBox1.FormattingEnabled=true;
             listBox1.ItemHeight=15;
-            listBox1.Items.AddRange(new object[] { "a", "b", "c", "d" });
+            listBox1.Items.AddRange(new object[] { "a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d","a", "b", "c", "d", "a", "b", "c", "d", });
             listBox1.Location=new Point(366, 25);
             listBox1.Name="listBox1";
             listBox1.Size=new Size(198, 199);
@@ -175,7 +163,6 @@ namespace FormsThemes.Demo
             Controls.Add(comboBox2);
             Controls.Add(checkBox2);
             Controls.Add(listBox1);
-            Controls.Add(comboBox1);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(checkBox1);
@@ -194,7 +181,6 @@ namespace FormsThemes.Demo
         private ThemedCheckBox checkBox1;
         private ThemedRadioButton radioButton1;
         private ThemedRadioButton radioButton2;
-        private ThemedComboBox comboBox1;
         private ListBox listBox1;
         private ThemedCheckBox checkBox2;
         private ThemedComboBox comboBox2;
