@@ -39,4 +39,10 @@ public record struct VisualStyle
     public VisualStateful<Rectangle> CheckBoxChecked { get; set; }
     public VisualStateful<Rectangle> CheckBoxIndeterminate { get; set; }
     public VisualStateful<Color> CheckBoxForegroundColor { get; set; }
+    public VisualStateful<Rectangle> RadioButtonUnchecked { get; set; }
+    public VisualStateful<Rectangle> RadioButtonChecked { get; set; }
+    public VisualStateful<Color> RadioButtonForegroundColor { get; set; }
+    public VisualStateful<Ninepatch> ComboBox { get; set; }
+    public VisualStateful<Rectangle> ComboBoxArrow { get; set; }
+    public VisualStateful<Color> ComboBoxForegroundColor { get; set; }
 }

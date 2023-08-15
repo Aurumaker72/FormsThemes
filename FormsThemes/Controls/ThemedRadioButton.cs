@@ -3,7 +3,7 @@ using FormsThemes.Helpers;
 
 namespace FormsThemes.Controls;
 
-public class ThemedCheckBox : CheckBox
+public class ThemedRadioButton : RadioButton
 {
     private VisualState _visualState = VisualState.Normal;
 
@@ -13,31 +13,31 @@ public class ThemedCheckBox : CheckBox
     protected override void OnCreateControl()
     {
         base.OnCreateControl();
-        MouseEnter += ThemedCheckBox_MouseEnter;
-        MouseLeave += ThemedCheckBox_MouseLeave;
-        MouseDown += ThemedCheckBox_MouseDown;
-        MouseUp += ThemedCheckBox_MouseUp;
+        MouseEnter += ThemedRadioButton_MouseEnter;
+        MouseLeave += ThemedRadioButton_MouseLeave;
+        MouseDown += ThemedRadioButton_MouseDown;
+        MouseUp += ThemedRadioButton_MouseUp;
     }
 
-    private void ThemedCheckBox_MouseUp(object? sender, MouseEventArgs e)
+    private void ThemedRadioButton_MouseUp(object? sender, MouseEventArgs e)
     {
         _visualState = VisualState.Hovered;
         Invalidate();
     }
 
-    private void ThemedCheckBox_MouseDown(object? sender, MouseEventArgs e)
+    private void ThemedRadioButton_MouseDown(object? sender, MouseEventArgs e)
     {
         _visualState = VisualState.Active;
         Invalidate();
     }
 
-    private void ThemedCheckBox_MouseLeave(object? sender, EventArgs e)
+    private void ThemedRadioButton_MouseLeave(object? sender, EventArgs e)
     {
         _visualState = VisualState.Normal;
         Invalidate();
     }
 
-    private void ThemedCheckBox_MouseEnter(object? sender, EventArgs e)
+    private void ThemedRadioButton_MouseEnter(object? sender, EventArgs e)
     {
         _visualState = VisualState.Hovered;
         Invalidate();
@@ -50,24 +50,20 @@ public class ThemedCheckBox : CheckBox
             return;
         }
 
-        var visualStateful = CheckState switch
-        {
-            CheckState.Unchecked => ThemeManager.Instance!.VisualStyle.CheckBoxUnchecked,
-            CheckState.Checked => ThemeManager.Instance!.VisualStyle.CheckBoxChecked,
-            CheckState.Indeterminate => ThemeManager.Instance!.VisualStyle.CheckBoxIndeterminate,
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var visualStateful = Checked
+            ? ThemeManager.Instance!.VisualStyle.RadioButtonChecked
+            : ThemeManager.Instance!.VisualStyle.RadioButtonUnchecked;
 
         var rectangle = visualStateful.Get(EffectiveVisualState);
 
         e.Graphics.DrawImage(ThemeManager.Instance.VisualStyle.Image,
-            new Rectangle(0, Bounds.Height / 2 - rectangle.Height / 2, rectangle.Height, rectangle.Height),
+            new Rectangle(0, Bounds.Height / 2 - rectangle.Height / 2, rectangle.Width, rectangle.Height),
             rectangle, GraphicsUnit.Pixel);
 
         e.Graphics.DrawString(
             Text,
             ThemeManager.Instance.VisualStyle.Font,
-            new SolidBrush(ThemeManager.Instance.VisualStyle.CheckBoxForegroundColor.Get(EffectiveVisualState)),
+            new SolidBrush(ThemeManager.Instance.VisualStyle.RadioButtonForegroundColor.Get(EffectiveVisualState)),
             e.ClipRectangle with { X = rectangle.Width + 1 },
             new StringFormat { Alignment = StringAlignment.Near, LineAlignment = StringAlignment.Center }
         );

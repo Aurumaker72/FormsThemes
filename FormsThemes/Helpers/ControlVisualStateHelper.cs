@@ -32,7 +32,7 @@ internal static class ControlVisualStateHelper
 
         return visualState;
     }
-    internal static VisualState GetOverridenVisualState(this CheckBox checkBox, VisualState visualState)
+    internal static VisualState GetSimpleOverridenVisualState(this Control checkBox, VisualState visualState)
     {
         return !checkBox.Enabled ? VisualState.Disabled : visualState;
     }

@@ -33,8 +33,8 @@ namespace FormsThemes.Demo
             themedButton1=new ThemedButton();
             groupBox1=new GroupBox();
             checkBox1=new ThemedCheckBox();
-            radioButton1=new RadioButton();
-            radioButton2=new RadioButton();
+            radioButton1=new ThemedRadioButton();
+            radioButton2=new ThemedRadioButton();
             comboBox1=new ThemedComboBox();
             listBox1=new ListBox();
             checkBox2=new ThemedCheckBox();
@@ -104,6 +104,9 @@ namespace FormsThemes.Demo
             comboBox1.Name="comboBox1";
             comboBox1.Size=new Size(121, 23);
             comboBox1.TabIndex=6;
+            comboBox1.Items.Add("item A");
+            comboBox1.Items.Add("item B");
+            comboBox1.Items.Add("item C");
             // 
             // listBox1
             // 
@@ -133,6 +136,9 @@ namespace FormsThemes.Demo
             comboBox2.Name="comboBox2";
             comboBox2.Size=new Size(121, 23);
             comboBox2.TabIndex=9;
+            comboBox2.Items.Add("item A");
+            comboBox2.Items.Add("item B");
+            comboBox2.Items.Add("item C");
             // 
             // textBox1
             // 
@@ -186,8 +192,8 @@ namespace FormsThemes.Demo
         private Controls.ThemedButton themedButton1;
         private GroupBox groupBox1;
         private ThemedCheckBox checkBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private ThemedRadioButton radioButton1;
+        private ThemedRadioButton radioButton2;
         private ThemedComboBox comboBox1;
         private ListBox listBox1;
         private ThemedCheckBox checkBox2;

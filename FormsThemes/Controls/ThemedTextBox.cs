@@ -10,7 +10,6 @@ public class ThemedTextBox : TextBox
     public ThemedTextBox()
     {
         SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-        SetStyle(ControlStyles.DoubleBuffer, true);
     }
     
     private VisualState _visualState = VisualState.Normal;
@@ -18,8 +17,9 @@ public class ThemedTextBox : TextBox
 
     protected override void OnCreateControl()
     {
-        BackColor = Color.Transparent;
         base.OnCreateControl();
+        BackColor = Color.Transparent;
+        DoubleBuffered = true;
         MouseEnter += ThemedButton_MouseEnter;
         MouseLeave += ThemedButton_MouseLeave;
         UpdateForeColor();

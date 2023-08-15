@@ -110,7 +110,75 @@ internal static class Program
             Active = Color.Black,
             Focused = Color.Black,
             Disabled = Color.FromArgb(109, 109, 109)
-        }
+        },
+        RadioButtonChecked = new VisualStateful<Rectangle>
+        {
+            Normal = new(52, 53, 13, 13),
+            Hovered = new(52, 66, 13, 13),
+            Active = new(52, 79, 13, 13),
+            Focused = new(52, 66, 13, 13),
+            Disabled = new(52, 92, 13, 13),
+        },
+        RadioButtonUnchecked = new VisualStateful<Rectangle>
+        {
+            Normal = new(52, 1, 13, 13),
+            Hovered = new(52, 14, 13, 13),
+            Active = new(52, 27, 13, 13),
+            Focused = new(52, 14, 13, 13),
+            Disabled = new(52, 40, 13, 13),
+        },
+        RadioButtonForegroundColor = new VisualStateful<Color>
+        {
+            Normal = Color.Black,
+            Hovered = Color.Black,
+            Active = Color.Black,
+            Focused = Color.Black,
+            Disabled = Color.FromArgb(109, 109, 109)
+        },
+        ComboBoxArrow = new VisualStateful<Rectangle>
+        {
+            Normal = new(66, 92, 10, 6),
+            Hovered = new(66, 111, 10, 6),
+            Active = new(66, 130, 10, 6),
+            Focused = new(66, 111, 10, 6),
+            Disabled = new(66, 149, 10, 6),
+        },
+        ComboBox = new VisualStateful<Ninepatch>
+        {
+            Normal = new Ninepatch
+            {
+                Source = new Rectangle(66, 1, 7, 21),
+                Center = new Rectangle(69, 10, 1, 3)
+            },
+            Hovered = new Ninepatch
+            {
+                Source = new Rectangle(66, 22, 7, 21),
+                Center = new Rectangle(69, 31, 1, 3)
+            },
+            Active = new Ninepatch
+            {
+                Source = new Rectangle(66, 22, 7, 21),
+                Center = new Rectangle(69, 31, 1, 3)
+            },
+            Focused = new Ninepatch
+            {
+                Source = new Rectangle(66, 43, 7, 21),
+                Center = new Rectangle(69, 52, 1, 3)
+            },
+            Disabled = new Ninepatch
+            {
+                Source = new Rectangle(66, 64, 7, 21),
+                Center = new Rectangle(69, 72, 1, 3)
+            }
+        },
+        ComboBoxForegroundColor = new VisualStateful<Color>
+        {
+            Normal = Color.Black,
+            Hovered = Color.Black,
+            Active = Color.Black,
+            Focused = Color.Black,
+            Disabled = Color.FromArgb(109, 109, 109)
+        },
     };
 
     /// <summary>

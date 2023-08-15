@@ -8,12 +8,18 @@ public class ThemedComboBox : ComboBox
 {
     private VisualState _visualState = VisualState.Normal;
 
-    private VisualState EffectiveVisualState => this.GetOverridenVisualState(_visualState);
+    private VisualState EffectiveVisualState => this.GetSimpleOverridenVisualState(_visualState);
 
+    public ThemedComboBox()
+    {
+        SetStyle(ControlStyles.UserPaint, true);
+    }
 
     protected override void OnCreateControl()
     {
         base.OnCreateControl();
+        DoubleBuffered = true;
+        Invalidate();
         MouseEnter += ThemedButton_MouseEnter;
         MouseLeave += ThemedButton_MouseLeave;
         MouseDown += ThemedButton_MouseDown;
@@ -45,23 +51,31 @@ public class ThemedComboBox : ComboBox
     }
 
 
-    // protected override void OnPaint(PaintEventArgs e)
-    // {
-    //     if (!this.EarlyPaint(e, DesignMode))
-    //     {
-    //         return;
-    //     }
-    //
-    //     e.Graphics.DrawImage(ThemeManager.Instance!.VisualStyle.Image,
-    //         ThemeManager.Instance.VisualStyle.Button.Get(EffectiveVisualState), e.ClipRectangle);
-    //
-    //     e.Graphics.DrawString(
-    //         Text,
-    //         ThemeManager.Instance.VisualStyle.Font,
-    //         new SolidBrush(ThemeManager.Instance.VisualStyle.ButtonForegroundColor.Get(EffectiveVisualState)),
-    //         e.ClipRectangle,
-    //         new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center }
-    //     );
-    // }
-   
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        base.OnPaint(e);
+
+        if (!this.EarlyPaint(e.Graphics, e.ClipRectangle, DesignMode))
+        {
+            return;
+        }
+
+        e.Graphics.DrawImage(ThemeManager.Instance!.VisualStyle.Image,
+            ThemeManager.Instance.VisualStyle.ComboBox.Get(EffectiveVisualState), e.ClipRectangle);
+
+        var rectangle = ThemeManager.Instance.VisualStyle.ComboBoxArrow.Get(EffectiveVisualState);
+
+        e.Graphics.DrawImage(ThemeManager.Instance.VisualStyle.Image,
+            new Rectangle(Bounds.Width - (rectangle.Width + 4), Bounds.Height / 2 - rectangle.Height / 2,
+                rectangle.Width, rectangle.Height),
+            rectangle, GraphicsUnit.Pixel);
+
+        e.Graphics.DrawString(
+            Text,
+            ThemeManager.Instance.VisualStyle.Font,
+            new SolidBrush(ThemeManager.Instance.VisualStyle.ComboBoxForegroundColor.Get(EffectiveVisualState)),
+            e.ClipRectangle with { X = 2 },
+            new StringFormat { Alignment = StringAlignment.Near, LineAlignment = StringAlignment.Center }
+        );
+    }
 }
