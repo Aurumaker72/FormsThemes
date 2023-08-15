@@ -22,6 +22,11 @@ public class ThemedListBox : ListBox
 
     private void OnDrawItem(object? sender, DrawItemEventArgs e)
     {
+        if (e.Index < 0)
+        {
+            return;
+        }
+
         var visualState = EffectiveVisualState;
 
         if (e.State.HasFlag(DrawItemState.Selected))

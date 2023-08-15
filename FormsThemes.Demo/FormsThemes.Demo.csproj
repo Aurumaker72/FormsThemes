@@ -9,19 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\FormsThemes.VisualStyles\FormsThemes.VisualStyles.csproj" />
         <ProjectReference Include="..\FormsThemes\FormsThemes.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <None Update="windows-10-atlas.png">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="windows-11-atlas.png">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="windows-7-atlas.png">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
 
 </Project>

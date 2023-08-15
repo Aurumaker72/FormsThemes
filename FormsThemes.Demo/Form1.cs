@@ -1,4 +1,5 @@
 using FormsThemes.Controls;
+using FormsThemes.VisualStyles;
 
 namespace FormsThemes.Demo;
 
@@ -7,15 +8,6 @@ public partial class Form1 : ThemedForm
     public Form1()
     {
         InitializeComponent();
-
-        themedButton1.Click += (sender, args) =>
-        {
-            var visualStyle = Program.Windows10VisualStyle;
-            visualStyle.Image = Image.FromFile("windows-11-atlas.png");
-            ThemeManager.Apply(visualStyle);
-            
-            new Form1().Show();
-        };
     }
 
     private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -27,5 +19,24 @@ public partial class Form1 : ThemedForm
                 control.Enabled ^= true;
             }
         }
+    }
+
+    
+    private void themedButton1_Click(object sender, EventArgs e)
+    {
+        ThemeManager.Apply(Resources.Windows7);
+        Refresh();
+    }
+
+    private void themedButton2_Click(object sender, EventArgs e)
+    {
+        ThemeManager.Apply(Resources.Windows10);
+        Refresh();
+    }
+
+    private void themedButton3_Click(object sender, EventArgs e)
+    {
+        ThemeManager.Apply(Resources.Windows11);
+        Refresh();
     }
 }

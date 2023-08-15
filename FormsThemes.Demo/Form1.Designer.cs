@@ -30,7 +30,6 @@ namespace FormsThemes.Demo
         /// </summary>
         private void InitializeComponent()
         {
-            themedButton1=new ThemedButton();
             groupBox1=new GroupBox();
             checkBox1=new ThemedCheckBox();
             radioButton1=new ThemedRadioButton();
@@ -41,16 +40,10 @@ namespace FormsThemes.Demo
             textBox1=new ThemedTextBox();
             textBox2=new ThemedTextBox();
             textBox3=new ThemedTextBox();
+            themedButton1=new ThemedButton();
+            themedButton2=new ThemedButton();
+            themedButton3=new ThemedButton();
             SuspendLayout();
-            // 
-            // themedButton1
-            // 
-            themedButton1.Location=new Point(588, 125);
-            themedButton1.Name="themedButton1";
-            themedButton1.Size=new Size(125, 23);
-            themedButton1.TabIndex=0;
-            themedButton1.Text="themedButton1";
-            themedButton1.UseVisualStyleBackColor=true;
             // 
             // groupBox1
             // 
@@ -98,10 +91,10 @@ namespace FormsThemes.Demo
             // 
             // listBox1
             // 
+            listBox1.DrawMode=DrawMode.OwnerDrawFixed;
             listBox1.FormattingEnabled=true;
             listBox1.ItemHeight=15;
-            listBox1.Items.AddRange(Enumerable.Range(0, 100).Select(x => $"Item {x}").ToArray());
-            listBox1.Location=new Point(366, 25);
+            listBox1.Location=new Point(366, 19);
             listBox1.Name="listBox1";
             listBox1.Size=new Size(198, 199);
             listBox1.TabIndex=7;
@@ -120,16 +113,15 @@ namespace FormsThemes.Demo
             // 
             comboBox2.DropDownStyle=ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled=true;
+            comboBox2.Items.AddRange(new object[] { "item A", "item B", "item C" });
             comboBox2.Location=new Point(588, 281);
             comboBox2.Name="comboBox2";
-            comboBox2.Size=new Size(121, 23);
+            comboBox2.Size=new Size(121, 24);
             comboBox2.TabIndex=9;
-            comboBox2.Items.Add("item A");
-            comboBox2.Items.Add("item B");
-            comboBox2.Items.Add("item C");
             // 
             // textBox1
             // 
+            textBox1.BackColor=Color.Transparent;
             textBox1.Location=new Point(366, 240);
             textBox1.Name="textBox1";
             textBox1.Size=new Size(100, 23);
@@ -137,6 +129,7 @@ namespace FormsThemes.Demo
             // 
             // textBox2
             // 
+            textBox2.BackColor=Color.Transparent;
             textBox2.Location=new Point(366, 281);
             textBox2.Multiline=true;
             textBox2.Name="textBox2";
@@ -145,18 +138,52 @@ namespace FormsThemes.Demo
             // 
             // textBox3
             // 
+            textBox3.BackColor=Color.Transparent;
             textBox3.Location=new Point(366, 338);
             textBox3.Name="textBox3";
             textBox3.ReadOnly=true;
             textBox3.Size=new Size(205, 23);
             textBox3.TabIndex=12;
-            textBox3.Text = "abcasdased";
+            textBox3.Text="abcasdased";
+            // 
+            // themedButton1
+            // 
+            themedButton1.Location=new Point(97, 113);
+            themedButton1.Name="themedButton1";
+            themedButton1.Size=new Size(149, 23);
+            themedButton1.TabIndex=13;
+            themedButton1.Text="Windows 7";
+            themedButton1.UseVisualStyleBackColor=true;
+            themedButton1.Click+=themedButton1_Click;
+            // 
+            // themedButton2
+            // 
+            themedButton2.Location=new Point(97, 142);
+            themedButton2.Name="themedButton2";
+            themedButton2.Size=new Size(149, 23);
+            themedButton2.TabIndex=14;
+            themedButton2.Text="Windows 10";
+            themedButton2.UseVisualStyleBackColor=true;
+            themedButton2.Click+=themedButton2_Click;
+            // 
+            // themedButton3
+            // 
+            themedButton3.Location=new Point(97, 171);
+            themedButton3.Name="themedButton3";
+            themedButton3.Size=new Size(149, 23);
+            themedButton3.TabIndex=15;
+            themedButton3.Text="Windows 11";
+            themedButton3.UseVisualStyleBackColor=true;
+            themedButton3.Click+=themedButton3_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             ClientSize=new Size(800, 450);
+            Controls.Add(themedButton3);
+            Controls.Add(themedButton2);
+            Controls.Add(themedButton1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -167,7 +194,6 @@ namespace FormsThemes.Demo
             Controls.Add(radioButton1);
             Controls.Add(checkBox1);
             Controls.Add(groupBox1);
-            Controls.Add(themedButton1);
             Name="Form1";
             Text="Form1";
             ResumeLayout(false);
@@ -175,8 +201,6 @@ namespace FormsThemes.Demo
         }
 
         #endregion
-
-        private ThemedButton themedButton1;
         private GroupBox groupBox1;
         private ThemedCheckBox checkBox1;
         private ThemedRadioButton radioButton1;
@@ -187,5 +211,8 @@ namespace FormsThemes.Demo
         private ThemedTextBox textBox1;
         private ThemedTextBox textBox2;
         private ThemedTextBox textBox3;
+        private ThemedButton themedButton1;
+        private ThemedButton themedButton2;
+        private ThemedButton themedButton3;
     }
 }
